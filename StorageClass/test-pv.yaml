@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: test-pv-node
+spec:
+  storageClassName: managed-nfs-storage             #定义存储类的名称，需与SC的名称对应
+  accessModes:
+    - ReadWriteMany                        #访问模式为RWM
+  resources:
+    requests:
+      storage: 100Mi
