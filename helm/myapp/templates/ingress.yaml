@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .Release.Name }}-ingress #ingress应用名
+spec:
+  rules:
+    - host: {{ .Values.host }}  #域名
+      http:
+        paths: 
+          - path: /  
+            backend: 
+              serviceName: {{ .Release.Name }}-svc #服务名
+              servicePort: 80

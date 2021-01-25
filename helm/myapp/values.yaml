@@ -1,0 +1,4 @@
+host: www.zlqit1.com
+replicas: 1
+image: nginx
+imageTag: latest
